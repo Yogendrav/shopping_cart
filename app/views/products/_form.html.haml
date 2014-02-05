@@ -1,0 +1,36 @@
+.product_form  
+  = form_for @product, :html => { :multipart => true }  do |f|
+    - if @product.errors.any?
+      #error_explanation
+        %h2
+          = pluralize(@product.errors.count, "error")
+          prohibited this product from being saved:
+        %ul
+          - @product.errors.full_messages.each do |msg|
+            %li= msg
+    .field
+      = f.label :product_name
+      = f.text_field :product_name
+    .field
+      = f.label :price
+      = f.text_field :price
+    .field
+      = f.label :image
+      = f.file_field :image
+    / .field
+    /   = f.label :color
+    /   = f.radio_button(:ccolor, "black")
+    /   = f.label(:black, "black")
+    /   = f.radio_button(:ccolor, "white")
+    /   = f.label(:white, "white")
+    / .field
+    /   = f.label :quantity
+    /   = f.select :quantity, options_for_select([["Select One", ""], "1", "2", "3", "4", "5"]), :class => 'genForm_dropBox'
+    / .field
+    /   = f.label :lens_options
+    /   = f.text_field :lens_options
+    .field
+      = f.label :description
+      = f.text_area :description,:rows => 3
+    .actions
+      = f.submit "Save", :class => "btn btn-danger"

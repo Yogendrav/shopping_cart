@@ -1,0 +1,38 @@
+%h1 Listing Products
+= form_tag products_path, :method => 'get' do
+  .product_search
+    = text_field_tag :search, params[:search]
+    %span
+      = submit_tag "Search", :name => nil, :class => "btn btn-default"
+.row
+  - @products.each do |product|
+    .col-sm-6.col-md-4.product_lists
+      .thumbnail.product_boxes
+        %div{:style => "height:125px;width:150px;margin-left:15px;"}
+          = link_to( image_tag(product.image.url(:small)), product_path(product))
+        .caption
+          %p.product_name
+            %i
+              = link_to (product.product_name), product_path(product)
+          %p
+            %b
+              Rs.
+            = product.price
+          %p
+            = #product.ccolor
+          %p
+            = #product.quantity
+          %p
+            =# product.lens_options
+          %p
+            = product.description
+          = #link_to "show", product, :class => "btn btn-mini"
+          = #link_to "edit", edit_product_path(product), :class => "btn btn-mini"
+          = #link_to "delete", product, method: :delete, data: { confirm: "Are you sure" }, :class => "btn btn-mini"
+%ul.pager
+  = will_paginate @product, renderer: BootstrapPagination::Rails
+
+/ :javascript
+/   $(function(){
+/     $('.pagination a').attr('data-remote', 'true')
+/   });

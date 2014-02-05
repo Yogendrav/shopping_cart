@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  image: MyString
+  product_name: MyString
+  ccolor: MyString
+  quantity: 1
+  lens_options: MyString
+
+two:
+  image: MyString
+  product_name: MyString
+  ccolor: MyString
+  quantity: 1
+  lens_options: MyString
