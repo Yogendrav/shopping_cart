@@ -1,14 +1,8 @@
-// Place all the styles related to the products controller here.
+// Place all the styles related to the profiles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.product_name {
-  font-size: 17px;
-  text-align: center;
-  border-bottom: 1px solid;
-  > i > a { color: #DEB887; text-decoration: none; }
-}
 
-#products,.product_form {
+.profile {
   background-color: #eee;
   padding: 20px;
   margin-top: 50px;

@@ -1,0 +1,14 @@
+.profile  
+  %h4
+    %font{color: "#A52A2A"} My Profile
+  %table
+    %tr
+      %td
+        %p
+          %b Email:
+          = @user.email
+    %tr
+      %td
+        %p
+          %b image:
+          = image_tag @user.image.url(:tiny)

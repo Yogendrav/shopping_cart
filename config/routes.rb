@@ -1,10 +1,14 @@
 ShoppingCart::Application.routes.draw do
+  #devise_for :admin_users, ActiveAdmin::Devise.config
+  #ActiveAdmin.routes(self)
+
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 
   devise_for :users
   resources :dashboards, :only => [:index]
   resources :products
   root :to => 'dashboards#index'
+  resources :profiles, :only => [:show]
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

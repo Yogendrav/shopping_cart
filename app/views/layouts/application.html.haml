@@ -6,16 +6,9 @@
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body
-    %header.navbar.navbar-fixed-top
+    %nav#nav.navbar.navbar-default.affix-top{"data-offset-top" => "100", "data-spy" => "affix", role: "navigation"}
       %nav.navbar-inner
         .container
-          = render 'layouts/navigation'
-    / - if user_signed_in?
-    /   = link_to "Logout", destroy_user_session_path, :class => "btn btn-primary"
-    /   |
-    /   = link_to "Product", products_path, :class => "btn btn-primary"
-    / - else
-    /   = link_to "login", user_session_path, :class => "btn btn-primary"
-    /   |
-    /   = link_to "Registration", new_user_registration_path, :class => "btn btn-primary"
+          = #render 'layouts/navigation'
+          = render 'layouts/header_account'
     = yield
