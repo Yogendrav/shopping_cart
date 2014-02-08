@@ -1,5 +1,5 @@
 .carousel-control { top: 50% !important; }
-.form-horizontal .control-label { padding-right: $padding; }
+.form-horizontal .control-label { padding-right: 10px; }
 
 .col-md-1, .col-md-2, .col-md-3,
 .col-md-4, .col-md-5, .col-md-6,
