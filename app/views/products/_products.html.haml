@@ -1,19 +1,20 @@
 %h1 Listing Products
-= form_tag products_path, :method => 'get' do
+= form_tag category_products_path, :method => 'get' do
   .product_search
     = text_field_tag :search, params[:search]
     %span
       = submit_tag "Search", :name => nil, :class => "btn btn-default"
 .row
-  - @products.each do |product|
+  - @category.products.each do |product|
     .col-sm-6.col-md-4.product_lists
       .thumbnail.product_boxes
         %div{:style => "height:125px;width:150px;margin-left:15px;"}
-          = link_to( image_tag(product.image.url(:small)), product_path(product))
+          -debugger
+          = link_to( image_tag(product.image.url(:small)), category_product_path(@category,@product))
         .caption
           %p.product_name
             %i
-              = link_to (product.product_name), product_path(product)
+              = product.product_name
           %p
             %b
               Rs.

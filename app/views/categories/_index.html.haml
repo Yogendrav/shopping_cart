@@ -1,0 +1,31 @@
+%div{style: "float: right;"}
+  %div{style: "margin-right:20px"}
+    = form_tag categories_path, :method => 'get' do
+      %div{style: "margin-left:15px;"}
+        %p
+          = text_field_tag :search, params[:search], :placeholder => "search categories"
+%div{style: "margin-left:50px;"}
+  %table.table.table-striped
+    %tbody
+      %tr
+        %td
+          - @categories.each do |category|
+            %ul
+              %li
+                %p
+                  = link_to "#{category.name}", category_path(category)
+                  = link_to 'Destroy', category_path(category), :confirm => 'Are you sure?',:method => :delete, :class => 'btn btn-mini btn-danger'
+                  = link_to "Edit", edit_category_path(category), :class => 'btn btn-mini',:remote => true
+              %ul
+                - category.sub_categories.each do |sub_category|
+                  %li
+                    %p
+                      = link_to "#{sub_category.name}", category_path(sub_category)
+                      = link_to 'Destroy', category_path(sub_category), :confirm => 'Are you sure?',:method => :delete, :class => 'btn btn-mini btn-danger'
+                      = link_to "Edit", edit_category_path(category), :class => 'btn btn-mini',:remote => true
+%br/
+%div{style: "margin-left:250px"}
+  = link_to "Add Category", new_category_path, :id => "open-contacts-dialog-btn", :class => "inbox-sf-add-btn tip", :method => :get, :class => 'btn btn-primary'  |
+%div{style: "margin-left:50px;"}
+  = will_paginate @categories
+#edit_form

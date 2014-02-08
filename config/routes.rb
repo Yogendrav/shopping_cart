@@ -6,9 +6,12 @@ ShoppingCart::Application.routes.draw do
 
   devise_for :users
   resources :dashboards, :only => [:index]
-  resources :products
+  # resources :products
   root :to => 'dashboards#index'
   resources :profiles, :only => [:show]
+  resources :categories do
+    resources :products
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

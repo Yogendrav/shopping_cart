@@ -3,7 +3,7 @@ class Product < ActiveRecord::Base
   has_attached_file :image, :styles => { :small => "150x150>", :tiny => "100x100", :large => "300X300>" },
   :url => "/assets/products/:id/:style/:basename.:extension",
   :path => ":rails_root/public/assets/products/:id/:style/:basename.:extension"
-
+  belongs_to :category
 
 	def self.search(search)
 	  if search
