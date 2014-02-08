@@ -16,6 +16,9 @@ RailsAdmin.config do |config|
 
   # If you want to track changes on your models:
   # config.audit_with :history, 'User'
+  
+  #Cancan role authorization
+  config.authorize_with :cancan, AdminAbility
 
   # Or with a PaperTrail: (you need to install it first)
   # config.audit_with :paper_trail, 'User'

@@ -1,0 +1,87 @@
+%body.main_page
+  .container
+    #this-carousel-id.carousel.slide
+      .carousel-inner
+        .item
+          %a
+            = image_tag "ngc5866.jpg"
+          .carousel-caption
+            %p The Antennae Galaxies
+        .item
+          %a
+            = image_tag "echo.jpg"
+          .carousel-caption
+            %p Carina Nebula: The Caterpillar
+        .item.active
+          %a
+            = image_tag "carina.jpg"
+          .carousel-caption
+            %p Light Echo From Star V838 Monocerotis
+        .item
+          %a
+            = image_tag "antennae.jpg"
+          .carousel-caption
+            %p Galaxy NGC 5866
+            
+      / .carousel-inner
+      /
+        next and previous controls here
+        href values must reference the id for this carousel
+      %a.carousel-control.left{"data-slide" => "prev", href: "#this-carousel-id"} ‹
+      %a.carousel-control.right{"data-slide" => "next", href: "#this-carousel-id"} ›
+    / .carousel
+    / end carousel
+    / Example row of columns
+    .row
+      .span4
+        %h2 Heading
+        %p
+          Donec id elit non mi porta gravida at eget metus. Fusce
+          dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut
+          fermentum massa justo sit amet risus. Etiam porta sem malesuada magna
+          mollis euismod. Donec sed odio dui.
+        %p
+          %a.btn{href: "#"} View details »
+      .span4
+        %h2 Heading
+        %p
+          Donec id elit non mi porta gravida at eget metus. Fusce
+          dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut
+          fermentum massa justo sit amet risus. Etiam porta sem malesuada magna
+          mollis euismod. Donec sed odio dui.
+        %p
+          %a.btn{href: "#"} View details »
+      .span4
+        %h2 Heading
+        %p
+          Donec sed odio dui. Cras justo odio, dapibus ac facilisis
+          in, egestas eget quam. Vestibulum id ligula porta felis euismod semper.
+          Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh,
+          ut fermentum massa justo sit amet risus.
+        %p
+          %a.btn{href: "#"} View details »
+    %hr/
+    %footer
+      %p
+        By
+        %a{href: "http://twitter.com/davidcochran"} David Cochran
+        of
+        %a{href: "http://alittlecode.com/"} aLittleCode.com
+        for
+        %a{href: "http://webdesign.tutsplus.com/"} webdesign.tutsplus.com
+  / /container
+  /
+    Le javascript
+    \==================================================
+  / Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if necessary
+  %script{src: "Carousel%20%7C%20Twitter%20Bootstrap%202.0.4_files/jquery.js"}
+  :javascript
+    window.jQuery || document.write('<script src="js/jquery-1.7.2.min.js"><\/script>')
+  / Bootstrap jQuery plugins compiled and minified
+  %script{src: "Carousel%20%7C%20Twitter%20Bootstrap%202.0.4_files/bootstrap.js"}
+  :javascript
+    $(document).ready(function(){
+      $('.carousel').carousel({
+        interval: 4000
+      });
+    });

@@ -6,7 +6,7 @@
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body
-    %nav#nav.navbar.navbar-default.affix-top{"data-offset-top" => "100", "data-spy" => "affix", role: "navigation"}
+    %nav#nav.navbar.navbar-default.affix-top{role: "navigation"}
       %nav.navbar-inner
         .container
           = #render 'layouts/navigation'

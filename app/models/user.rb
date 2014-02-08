@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :name, :image, :image_file_name
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :name, :image, :image_file_name, :role
   has_attached_file :image, :styles => { :small => "150x150>", :tiny => "100x100", :large => "300X300>" },
   :url => "/assets/products/:id/:style/:basename.:extension",
   :path => ":rails_root/public/assets/products/:id/:style/:basename.:extension"
@@ -14,5 +14,8 @@ class User < ActiveRecord::Base
     # configure :player do
     #   label 'Owner of this ball: '
     # end
+  end
+  def admin?
+    self.role == :admin
   end
 end
