@@ -5,11 +5,9 @@ class ProductsController < ApplicationController
 		@products = Product.paginate(:page => params[:page], :per_page => 9).search(params[:search])
 	end
 	def new
-		debugger
 		@product = Product.new
 	end
 	def show
-		debugger
 		@product = Product.find(params[:id])
 	end
 	def edit
@@ -17,7 +15,7 @@ class ProductsController < ApplicationController
 		@product = Product.find(params[:id])
 	end
 	def create
-    @product =  Product.new(params[:product])
+    @product =  @category.products.build(params[:product])
     if @product.save
 		  redirect_to category_product_path(@category,@product)
 		else

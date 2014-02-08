@@ -9,7 +9,6 @@
     .col-sm-6.col-md-4.product_lists
       .thumbnail.product_boxes
         %div{:style => "height:125px;width:150px;margin-left:15px;"}
-          -debugger
           = link_to( image_tag(product.image.url(:small)), category_product_path(@category,@product))
         .caption
           %p.product_name

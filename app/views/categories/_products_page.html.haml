@@ -1,0 +1,33 @@
+%h3
+  Number of Products{#{@category.products.count}}
+.row
+  - @category.products.each_with_index do |product,index|
+    - if (index%3) == 0
+      .col-sm-6.col-md-4.product_lists
+        .thumbnail.product_boxes
+          %div{:style => "height:125px;width:150px;margin-left:15px;"}
+            = link_to( image_tag(product.image.url(:small)), category_product_path(@category,product))
+          .caption
+            %div
+              = product.product_name
+            %div
+              = "Price: #{product.price}"
+            %div
+              = truncate(product.description, :length => 20, :separator => '...')
+.row
+  - @category.sub_categories.each do |sub_category|
+    - sub_category.products.each_with_index do |product,index|
+      - if (index%3) == 0
+        .col-sm-6.col-md-4.product_lists
+          .thumbnail.product_boxes
+            %div{:style => "height:125px;width:150px;margin-left:15px;"}
+              = link_to( image_tag(product.image.url(:small)), category_product_path(@category,product))
+            .caption
+              %div
+                = product.product_name
+              %div
+                = "Price: #{product.price}"
+              %div
+                = truncate(product.description, :length => 20, :separator => '...')
+  = link_to "Add Products", new_category_product_path(@category), :id => "open-contacts-dialog-btn", :class => "inbox-sf-add-btn tip", :method => :get, :class => 'btn btn-primary'
+#edit_form

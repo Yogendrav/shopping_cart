@@ -11,4 +11,7 @@
       %td
         %p
           %b image:
-          = image_tag @user.image.url(:tiny)
+          - if@user.image.present?
+            = image_tag @user.image.url(:tiny)
+          - else
+            = image_tag "user_image.jpeg"
