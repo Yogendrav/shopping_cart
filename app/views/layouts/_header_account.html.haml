@@ -22,11 +22,17 @@
         = image_tag "setting.png", width: "30", height: "30"
       %ul.dropdown-menu
         %li
-          = link_to "My Profile", profile_path(current_user)
+          = link_to profile_path(current_user) do
+            %i.fa.fa-user
+            My Profile
         %li
-          = link_to "Category", categories_path
+          = link_to categories_path do
+            %i.fa.fa-bars
+            Category
         %li
-          = link_to 'Edit account', edit_user_registration_path
+          = link_to edit_user_registration_path do
+            %i.fa.fa-pencil-square-o
+            Edit account
         %li
           = link_to destroy_user_session_path, :method => :delete do
             %i.fa.fa-sign-out
