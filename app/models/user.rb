@@ -10,12 +10,4 @@ class User < ActiveRecord::Base
   :url => "/assets/products/:id/:style/:basename.:extension",
   :path => ":rails_root/public/assets/products/:id/:style/:basename.:extension"
   # attr_accessible :title, :body
-  rails_admin do
-    # configure :player do
-    #   label 'Owner of this ball: '
-    # end
-  end
-  def admin?
-    self.role == :admin
-  end
 end

@@ -31,7 +31,7 @@ gem 'haml-rails'
 gem "paperclip", "~> 3.0"
 gem 'will_paginate-bootstrap'
 gem "cancan"
-gem "rails_admin"
+#gem "rails_admin"
 gem "font-awesome-rails"
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

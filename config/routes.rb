@@ -1,7 +1,5 @@
 ShoppingCart::Application.routes.draw do
 
-  mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
-
   devise_for :users
   resources :homes, :only => [:index]
   # resources :products
