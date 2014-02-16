@@ -1,10 +1,10 @@
-/ %ul.nav.navbar-nav
-/   - @categories.each do |category|
-/     %li.dropdown
-/       %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
-/         = category.name
-/       %ul.dropdown-menu
-/         - category.sub_categories.each do |subcategory|
-/           %li
-/             %a
-/               = link_to "#{subcategory.name}", category_path(category)
+%ul.nav.navbar-nav
+  - @categories.each do |category|
+    %li.dropdown
+      %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
+        = category.name
+      %ul.dropdown-menu
+        - category.sub_categories.each do |subcategory|
+          %li
+            %a
+              = link_to "#{subcategory.name}", category_path(category)

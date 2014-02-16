@@ -29,3 +29,27 @@ min-height: 1px;
   width: 20%;
 }
 .thumbnail:hover, .thumbnail:focus, .thumbnail.active { border-color: #428BCA; text-decoration: none; }
+/*Footer Section*/
+
+#push, #footer {
+    height: 60px;
+}
+#footer {
+    background-color: #F5F5F5;
+}
+@media (max-width: 767px) {
+	#footer {
+	    margin-left: -20px;
+	    margin-right: -20px;
+	    padding-left: 20px;
+	    padding-right: 20px;
+	}
+}
+.muted.credit{
+	text-align: center;
+  margin-top: 10px;
+  > a {
+	color: #999999;
+	text-decoration :none;
+  }
+}

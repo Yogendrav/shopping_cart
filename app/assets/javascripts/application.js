@@ -14,4 +14,5 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require twitter-bootstrap-hover-dropdown.min.js
+//= require jquery_nested_form
 //= require_tree .

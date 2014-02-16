@@ -4,9 +4,16 @@ ShoppingCart::Application.routes.draw do
   ActiveAdmin.routes(self)
 
   devise_for :users
-  resources :homes, :only => [:index]
-  # resources :products
   root :to => 'homes#index'
+  resources :homes do
+    collection do
+      get 'index'
+      get 'contact'
+      get 'terms_and_condition'
+      get 'about_us'
+    end
+  end
+  # resources :products
   resources :profiles, :only => [:show]
   resources :products
   # resources :categories

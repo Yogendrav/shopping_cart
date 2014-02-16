@@ -34,6 +34,7 @@ gem "cancan"
 #gem "rails_admin"
 gem "font-awesome-rails"
 gem 'activeadmin', github: 'gregbell/active_admin'
+gem "nested_form"
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
