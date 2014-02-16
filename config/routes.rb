@@ -16,7 +16,7 @@ ShoppingCart::Application.routes.draw do
   # resources :products
   resources :profiles, :only => [:show]
   resources :products
-  # resources :categories
+  resources :categories
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
