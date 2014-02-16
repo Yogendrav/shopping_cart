@@ -1,15 +1,15 @@
-%h1 Listing Products
-= form_tag category_products_path, :method => 'get' do
-  .product_search
-    = text_field_tag :search, params[:search]
-    %span
-      = submit_tag "Search", :name => nil, :class => "btn btn-default"
+/ %h1 Listing Products
+/ = form_tag category_products_path, :method => 'get' do
+/   .product_search
+/     = text_field_tag :search, params[:search]
+/     %span
+/       = submit_tag "Search", :name => nil, :class => "btn btn-default"
 .row
-  - @category.products.each do |product|
+  - @products.each do |product|
     .col-sm-6.col-md-4.product_lists
       .thumbnail.product_boxes
         %div{:style => "height:125px;width:150px;margin-left:15px;"}
-          = link_to( image_tag(product.image.url(:small)), category_product_path(@category,@product))
+          = image_tag product.image.url(:small)
         .caption
           %p.product_name
             %i
@@ -19,18 +19,9 @@
               Rs.
             = product.price
           %p
-            = #product.ccolor
-          %p
-            = #product.quantity
-          %p
-            =# product.lens_options
-          %p
             = product.description
-          = #link_to "show", product, :class => "btn btn-mini"
-          = #link_to "edit", edit_product_path(product), :class => "btn btn-mini"
-          = #link_to "delete", product, method: :delete, data: { confirm: "Are you sure" }, :class => "btn btn-mini"
 %ul.pager
-  = will_paginate @product, renderer: BootstrapPagination::Rails
+  = #will_paginate @product, renderer: BootstrapPagination::Rails
 
 / :javascript
 /   $(function(){

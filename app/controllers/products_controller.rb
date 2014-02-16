@@ -1,8 +1,8 @@
 class ProductsController < ApplicationController
-	before_filter :load_category
+	# before_filter :load_category
 
 	def index
-		@products = Product.paginate(:page => params[:page], :per_page => 9).search(params[:search])
+		@products = Product.all
 	end
 	def new
 		@product = Product.new
@@ -11,7 +11,7 @@ class ProductsController < ApplicationController
 		@product = Product.find(params[:id])
 	end
 	def edit
-		@categories = Category.all
+		# @categories = Category.all
 		@product = Product.find(params[:id])
 	end
 	def create
@@ -32,7 +32,7 @@ class ProductsController < ApplicationController
 		end
 	end
 	def update
-		@categories = Category.where(parent_id: nil)
+		# @categories = Category.where(parent_id: nil)
 		@product = Product.find(params[:id])
 		if @product.update_attributes(params[:product])
 			redirect_to category_product_path(@category, @product)
@@ -43,6 +43,6 @@ class ProductsController < ApplicationController
 
 	private
 	def load_category
-		@category = Category.find(params[:category_id])
+		# @category = Category.find(params[:category_id])
 	end
 end

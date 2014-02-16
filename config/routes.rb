@@ -1,13 +1,15 @@
 ShoppingCart::Application.routes.draw do
 
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
+
   devise_for :users
   resources :homes, :only => [:index]
   # resources :products
   root :to => 'homes#index'
   resources :profiles, :only => [:show]
-  resources :categories do
-    resources :products
-  end
+  resources :products
+  # resources :categories
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

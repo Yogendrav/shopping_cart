@@ -33,6 +33,7 @@ gem 'will_paginate-bootstrap'
 gem "cancan"
 #gem "rails_admin"
 gem "font-awesome-rails"
+gem 'activeadmin', github: 'gregbell/active_admin'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
